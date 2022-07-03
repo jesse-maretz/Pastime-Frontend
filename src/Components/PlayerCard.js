@@ -1,14 +1,11 @@
+
+import '../Style/playercard.css'
 /* Reusable component for rendering the players in the style of a baseball card -- will have option for cards to be grid-view on team roster page */
 
-export const PlayerCard = () => {
-
-
-
-
-
+const PlayerCard = () => {
 
     return (
-        <div className="player-card">
+        <div>
     {/* 
     Some of these details will only be in an expanded show page, but including them here for now
     Player details:
@@ -31,7 +28,7 @@ export const PlayerCard = () => {
     */}
 
             {/* This is the front side */}
-            <div className="card-front">
+            <div className="player-card">
                 <img src="#" alt="Player Img" />
                 <h2>PLAYER NAME</h2>
                 <div className="card-front-info">
@@ -100,3 +97,5 @@ export const PlayerCard = () => {
         </div>
     )
 }
+
+export default PlayerCard
