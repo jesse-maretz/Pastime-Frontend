@@ -1,5 +1,4 @@
 
-import '../Style/playercard.css'
 /* Reusable component for rendering the players in the style of a baseball card -- will have option for cards to be grid-view on team roster page */
 
 const PlayerCard = () => {
@@ -42,12 +41,17 @@ const PlayerCard = () => {
             </div>
 
             {/* This is the back side */}
+   
+
             <div className="card-back">
-                <div className="card-back-bio">
+
+                <div /*  */className="card-back-bio">
                     <p>Ht./Wt.: {"~PROPS~"}</p>
                     <p>Bats/Throws: {"~PROPS~"}</p>
                     <p>2022 BA/RBI/HR: {"~PROPS~"}</p>
                 </div>
+
+
                 <div className="card-back-expanded-stats">
                 {/*
                     Would like to come up with a better way for displaying player stats relying on modern analytics without sacrificing familiar stats
