@@ -1,4 +1,13 @@
 * {
     box-sizing: border-box;
+    border: .05em solid green;
+}
+.active-roster {
+    display: flex;
+    flex-wrap: wrap;
+}
+.active-player {
+    width: 15%;
+    height: auto;
 
 }

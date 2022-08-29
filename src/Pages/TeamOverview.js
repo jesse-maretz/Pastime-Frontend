@@ -1,56 +1,50 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import Player from "../Components/Player"
 import "../Style/App.css"
+
+
 const axios = require('axios')
 
 
 const TeamOverview = () => {
-    const [teams, setTeams] = useState([])
     const [roster, setRoster] = useState([])
-    const [active, setActive] = useState([])
     const [showPlayers, setShowPlayers] = useState(false)
 
 
-/* ========================================== */
-    /*  -- GET Active MLB Teams -- */
-/* ========================================== */
-    const getTeams = () => {
-        axios.get(`https://api.sportsdata.io/v3/mlb/scores/json/teams?key=47523e6bcc8f4041be7c999dc613d23b`)
-        .then((res)=>{
-            console.log(res)
-        })
-    }
-/* ========================================== */
 
 /* ========================================== */
-    /*  -- GET Single Team -- */
+    /*  -- GET Full Yankees Roster -- */
 /* ========================================== */
-const getTeam = () => {
-    axios.get(`https://api.sportsdata.io/v3/mlb/scores/json/teams?key=47523e6bcc8f4041be7c999dc613d23b`)
-    .then((res)=>{
-        console.log(res)
-    })
-}
-/* ========================================== */
-
-/* ========================================== */
-    /*  -- GET 40-Man Active Roster -- */
-/* ========================================== */
-    const getActiveRoster = () => {
-        axios.get(`https://api.sportsdata.io/v3/mlb/scores/json/Players/NYY?key=47523e6bcc8f4041be7c999dc613d23b`)
+    const getFullRoster = () => {
+        axios.get(`https://api.sportsdata.io/v3/mlb/scores/json/Players/BOS?key=47523e6bcc8f4041be7c999dc613d23b`)
         .then((res)=>{
             console.log(res.data)
-            const activePlayers = []
-            for (let i = 0; i < 220; i++) {
-                if (res.data[i].Status == 'Active') {
-                    activePlayers.push(res.data[i])
-                }
-            }
-            console.log(activePlayers)
-            setActive(activePlayers)
+            setRoster(res.data)
         })
-        setShowPlayers(true)
     }
+
 /* ========================================== */
+    /* -- Show 25-Man Active Roster -- */
+/* ========================================== */
+
+    const showActive = () => {
+        // for (let i = 0; i < 220; i++) {
+        //     if (roster[i].Status == 'Active') {
+        //         acpush(roster[i])
+        //     }
+        // }
+    setShowPlayers(true)
+    }
+
+/* ========================================== */
+    /* -- Pre-load & sort roster data -- */
+/* ========================================== */
+    useEffect(() => {
+        getFullRoster()
+    }, [])
+
+
+
 
 
     return (
@@ -60,33 +54,24 @@ const getTeam = () => {
 
         {/* --- GET Request Buttons --- */}
             <div className="btns">
-                <button onClick={getActiveRoster}>Get Yanks 40 Man Active Roster</button>
-                <button onClick={getTeams}>Get All 30 MLB Teams</button>
+                <button onClick={showActive}>Active Roster</button>
             </div>
         {/* --------------------------- */}
         
 
         {/* --- Conditional Rendering; 40-Man Roster --- */}
             {
-                active ?
+                showPlayers ?
                 <div className="active-roster">
-                    {active.map((player)=>{
+                    {roster.map((player)=>{
                         return (
-                            <div
-                            key={player.PlayerID}
-                            className="player">
-                                <h2>{`${player.FirstName}` + ' ' + `${player.LastName}`}</h2>
-                                <img src={player.PhotoUrl} alt="No pic" />
-                                <p>{player.Jersey}</p>
-                            </div>
+                            <Player key={player.PlayerID} player={player} />
                         )
                     })}
                 </div>
                 : null
             }
         {/* -------------------------------------------- */}
-
-
         </div>
     )
 }
