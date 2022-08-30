@@ -1,13 +1,16 @@
 * {
     box-sizing: border-box;
-    border: .05em solid green;
+    /* border: .05em solid green; */
 }
 .active-roster {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .active-player {
-    width: 15%;
+    border: .02em solid midnightblue;
+    padding: .2em;
+    width: 20vw;
     height: auto;
 
 }
