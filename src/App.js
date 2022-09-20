@@ -1,12 +1,11 @@
 import React from "react";
-import TeamMainPage from "./Pages/TeamMainPage";
-import Home from "./Pages/Home";
+import TeamHome from "./pages/TeamHome"
 
 function App() {
 
 return (
   <>
-    <TeamMainPage />
+    <TeamHome />
   </>
   )
 }

@@ -1,7 +1,11 @@
-const MinorLeaguer = () => {
+import { useState } from "react"
+
+const Minors = (props) => {
+    
 
     return (
         <div>
+
             <div className="minors-list">
                 {
                     props.player.Status == "Minors" ?
@@ -13,13 +17,11 @@ const MinorLeaguer = () => {
                     : null
                 }
             </div>
+
         </div>
     )
 
 
-
-
-
 }
 
-export default MinorLeaguer
+export default Minors

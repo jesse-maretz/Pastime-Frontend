@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
-    /* border: .05em solid green; */
 }
+
+/* <--- COMPONENT: Roster ---> */
+.vis-aid {
+    border: .035em dotted palevioletred;
+}
+
+/* <--- COMPONENT: Player Card ---> */
 .active-roster {
     display: flex;
     flex-wrap: wrap;
@@ -12,5 +18,4 @@
     padding: .2em;
     width: 20vw;
     height: auto;
-
 }
