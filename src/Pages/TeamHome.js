@@ -10,7 +10,6 @@ const TeamHome = () => {
 /* ======================================= */
     const [players, setPlayers] = useState([])
 
-
 /* ========================================== */
     /*  -- GET Full Yankees Roster -- */
 /* ========================================== */
@@ -29,11 +28,9 @@ const TeamHome = () => {
     },[])
 
 
-
-
     return (
         <div>
-            <h1>Welcome to the Team Home Page!</h1>
+            <h1>Team Home Page</h1>
             <Roster players={players} />
         </div>
     )

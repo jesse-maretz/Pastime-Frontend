@@ -8,7 +8,7 @@ const Player = () => {
         <>
             <div
             className="player card vis-aid">
-                <h2>I'm a player card!</h2>
+                <h2>Player Card</h2>
             </div>
         </>
     )
