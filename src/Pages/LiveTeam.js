@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import Roster from "../components/Roster"
 
+
 const axios = require('axios')
 
-const TeamHome = () => {
+const LiveTeam = () => {
 
 /* ======================================= */
     /*  -- State Management -- */
@@ -29,11 +30,11 @@ const TeamHome = () => {
 
 
     return (
-        <div>
-            <h1>Team Home Page</h1>
+        <div className="page live-team">
+            <h1>Live Team</h1>
             <Roster players={players} />
         </div>
     )
 }
 
-export default TeamHome
+export default LiveTeam

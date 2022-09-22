@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "../style/App.css"
-import Majors from "./Majors"
-import Minors from "./Minors"
+import FilterCard from "../components/FilterCard"
+import Player from "./Player"
 
 
 const Roster = (props) => {
@@ -9,8 +9,8 @@ const Roster = (props) => {
 /* ======================================= */
     /*  -- State Management -- */
 /* ======================================= */
-    const [players, setPlayers] = useState([])
-    const [showPlayers, setShowPlayers] = useState(false)
+    const [roster, setRoster] = useState([])
+    const [visible, setVisible] = useState(false)
 
 /* ========================================== */
     /*  -- Different Roster Views -- */
@@ -19,20 +19,20 @@ const Roster = (props) => {
         console.log("Expanded")
     }
 
-    const handleMajors = () => {
+    const handleShow = () => {
         console.log("Major leaguers")
     }
 
-    const handleMinors = () => {
+    const handleFarm = () => {
         console.log("Minor leaguers")
     }
 
 
 /* ========================================== */
-    /* -- Filter 25-Man Active Roster -- */
+    /* -- Filter Active MLB Roster -- */
 /* ========================================== */
-    const showActive = () => {
-        setShowPlayers(true)
+    const showactive = () => {
+        setVisible(true)
     }
 
 
@@ -47,31 +47,34 @@ const Roster = (props) => {
             <div
             className="roster container vis-aid">
 
-            </div>
+                <h2>Team Roster</h2>
+                <button onClick={handleRosterExpand}>Expand Roster</button>
 
 
-            <h2>Team Roster</h2>
-            <button onClick={handleRosterExpand}>Expand Roster</button>
-            <button onClick={handleMajors}>Filter MLB</button>
-            <button onClick={handleMinors}>Filter MiLB</button>
+                <div className="league-filters">
+                    <div className="league filter-the-show">
+                        <FilterCard league={"The Show"} />
+                        <button onClick={handleShow}>Filter MLB</button>
+                    </div>
 
-
-            {
-                showPlayers ?
-                <div className="active-roster">
-                    {players.map((player)=>{
-                        return (
-                            <Majors key={player.PlayerID} player={player} />
-                        )
-                    })}
+                    <div className="league filter-the-farm">
+                        <FilterCard league={"The Farm"} />
+                        <button onClick={handleFarm}>Filter MiLB</button>
+                    </div>
                 </div>
-                : <div><h1>Welcome to the home of the NYY!</h1></div>
-            }
 
-            {
-                
-            }
-
+                {
+                    visible ?
+                    <div className="active-roster">
+                        {roster.map((player)=>{
+                            return (
+                                <Player key={player.PlayerID} player={player} />
+                            )
+                        })}
+                    </div>
+                    : <p>Filter rosters by clicking on the league buttons</p>
+                }
+            </div>
         </div>
     )
 }

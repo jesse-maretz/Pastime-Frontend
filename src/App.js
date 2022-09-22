@@ -1,11 +1,11 @@
 import React from "react";
-import TeamHome from "./pages/TeamHome"
+import LiveTeam from "./pages/LiveTeam";
 
 function App() {
 
 return (
   <>
-    <TeamHome />
+    <LiveTeam />
   </>
   )
 }

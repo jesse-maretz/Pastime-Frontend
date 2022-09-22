@@ -2,9 +2,31 @@
     box-sizing: border-box;
 }
 
+.league-filters {
+    display:flex;
+    justify-content: space-around;
+}
+.card {
+    border: .1em solid black;
+}
+.container {
+    border: .1em solid black;
+}
+.page {
+    border: .1em solid black; 
+}
+
 /* <--- COMPONENT: Roster ---> */
 .vis-aid {
     border: .035em dotted palevioletred;
+}
+
+.league {
+    border: .08em solid black;
+    width: 25%;
+    margin: 5%;
+    padding: 5%;
+    text-align: center;;
 }
 
 /* <--- COMPONENT: Player Card ---> */
