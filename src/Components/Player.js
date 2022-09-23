@@ -2,14 +2,22 @@ import { useState, useEffect } from "react"
 import "../style/App.css"
 
 const Player = (props) => {
-/* ======================================= */
-    /*  -- State Management -- */
-/* ======================================= */
+/*
+=======
+    -- State Management -- 
+=======
+*/
     // Tracking player health for placement on active v injured lists
     const [injured, setInjured] = useState(false)
     // Track major leaguer vs minor leaguer
     const [league, setLeague] = useState('')
 
+
+/*
+=======
+    --  -- 
+=======
+*/
     const healthCheck = () => {
         setInjured(false)
         if (props.player.Status !== "Active") {

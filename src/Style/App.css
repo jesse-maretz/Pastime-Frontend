@@ -2,10 +2,7 @@
     box-sizing: border-box;
 }
 
-.league-filters {
-    display:flex;
-    justify-content: space-around;
-}
+/* Component Types */
 .card {
     border: .1em solid black;
 }
@@ -16,11 +13,7 @@
     border: .1em solid black; 
 }
 
-/* <--- COMPONENT: Roster ---> */
-.vis-aid {
-    border: .035em dotted palevioletred;
-}
-
+/* Standings */
 .league {
     border: .08em solid black;
     width: 25%;
@@ -28,8 +21,32 @@
     padding: 5%;
     text-align: center;;
 }
+.league-filters {
+    display:flex;
+    justify-content: space-around;
+}
+.leagues {
+    display:flex;
+    justify-content: space-around;
+    border: .5em solid salmon;
+}
+.live-standings{
+    display:flex;
+    flex-direction: column;
+    padding: 1em;
+}
+.american-league {
+    width: 30vw;
+    height: auto;
+    border: .5em solid crimson; 
+}
+.national-league {
+    width: 30vw;
+    height: auto;
+    border: .5em solid cornflowerblue;
+}
 
-/* <--- COMPONENT: Player Card ---> */
+/* Roster */
 .active-roster {
     display: flex;
     flex-wrap: wrap;
