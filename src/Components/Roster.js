@@ -3,6 +3,7 @@ import "../style/App.css"
 import FilterCard from "../components/FilterCard"
 import Player from "./Player"
 
+import axios from "axios"
 
 const Roster = (props) => {
 
@@ -12,13 +13,21 @@ const Roster = (props) => {
     const [roster, setRoster] = useState([])
     const [visible, setVisible] = useState(false)
 
+
+
+/* ========================================== */
+    /*  -- GET Full Yankees Roster -- */
+/* ========================================== */
+const getRoster = () => {
+    axios.get(`https://api.sportsdata.io/v3/mlb/scores/json/Players/NYY?key=47523e6bcc8f4041be7c999dc613d23b`)
+    .then((res)=>{
+        setRoster(res.data)
+    })
+}
+
 /* ========================================== */
     /*  -- Different Roster Views -- */
 /* ========================================== */
-    const handleRosterExpand = () => {
-        console.log("Expanded")
-    }
-
     const handleShow = () => {
         console.log("Major leaguers")
     }
@@ -31,8 +40,10 @@ const Roster = (props) => {
 /* ========================================== */
     /* -- Filter Active MLB Roster -- */
 /* ========================================== */
-    const showactive = () => {
+    const filterActive = () => {
+        
         setVisible(true)
+        console.log()
     }
 
 
@@ -45,11 +56,9 @@ const Roster = (props) => {
         <div>
 
             <div
-            className="roster container vis-aid">
-
-                <h2>Team Roster</h2>
-                <button onClick={handleRosterExpand}>Expand Roster</button>
-
+            className="roster 
+            container 
+            vis-aid">
 
                 <div className="league-filters">
                     <div className="league filter-the-show">

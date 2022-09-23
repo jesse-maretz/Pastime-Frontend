@@ -12,7 +12,7 @@ const FilterCard = (props) => {
     return (
         <div>
             <h2>{props.league}</h2>
-            <button>Minors</button>
+            <button onClick={props}>Minors</button>
         </div>
     )
 }
