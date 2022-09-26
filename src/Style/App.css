@@ -2,18 +2,56 @@
     box-sizing: border-box;
 }
 
-/* Component Types */
-.card {
-    border: .1em solid black;
+/* --- Component Types --- */
+.page {
+    border: .1em solid black; 
 }
 .container {
     border: .1em solid black;
 }
-.page {
-    border: .1em solid black; 
+.card {
+    border: .1em solid black;
 }
-
-/* Standings */
+.link {
+    text-decoration: none;
+}
+.nav {
+    display:flex;
+    justify-content: flex-start;
+    padding: .2em;
+    width:100vw;
+    height:10vh;
+}
+button {
+    text-decoration: none;
+}
+/* --- */
+/* --- All Teams --- */
+.team-logo {
+    width: 7em;
+    height: 7em;
+    align-self: center;
+}
+.all-teams {
+    border: .5em solid red;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.team-card {
+    border: .1em solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .3em;
+    margin: 1%;
+    flex-basis: 10em;
+    text-align: center;
+}
+/* --- */
+/* --- Standings --- */
 .league {
     border: .08em solid black;
     width: 25%;
@@ -28,7 +66,7 @@
 .leagues {
     display:flex;
     justify-content: space-around;
-    border: .5em solid salmon;
+    border: .5em solid gold;
 }
 .live-standings{
     display:flex;
@@ -45,8 +83,8 @@
     height: auto;
     border: .5em solid cornflowerblue;
 }
-
-/* Roster */
+/* --- */
+/* --- Roster --- */
 .active-roster {
     display: flex;
     flex-wrap: wrap;
@@ -58,3 +96,4 @@
     width: 20vw;
     height: auto;
 }
+/* --- */

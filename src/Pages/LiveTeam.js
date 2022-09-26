@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
-import AllTeams from "../components/AllTeams"
 import Roster from "../components/Roster"
-import Standings from "../components/Standings"
 
-const LiveTeam = () => {
-    // const [roster, setRoster] = useState([])
-    // const [standings, setStandings] = useState([])
-    // const [sched, setSched] = useState()
-    // const [news, setNews] = useState()
-
+const LiveTeam = (props) => {
     return (
     <>
         <div className="page live-team">
-            <AllTeams />
+            <h2>LiveTeam</h2>
         </div>
+        <Roster team={props.team}/>
+
     </>
     )
 }
