@@ -1,4 +1,4 @@
-# yanks-22
+# mlb-app
 
 ## About
 A simple fullstack app about the 2022 New York Yankees; to be used for educational purposes during in-class demonstrations & 1-on-1 tutoring.
