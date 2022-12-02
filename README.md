@@ -1,4 +1,4 @@
-# mlb-ap
+# mlb-app
 
 ## **More details to come**
 
